@@ -1,0 +1,48 @@
+// make the required variables //
+greenballs, redballs, currentrow, loseStreak, correctGuesses, start and check button, array of words
+
+// if player clicks on start button //
+everything will get a reset, variables / words / lingoboard / scores / bingocard
+
+// function for generating a new Word //
+if player guesses correct word 
+using a random function a random word will get picked from words array
+
+// function for checking if word is correct (also the biggest function) //
+every row will get selected
+if the amount of guesses are more then the amount of rows a message will be displayed that the user has no more guesses and loseStreak will get higher
+However if the player still hasnt lost, the function for creating a new word will be used
+
+Now the logic for if the letter is in the word / right place in the word
+first we need to get the active row
+then we will get all the inputs from the active row
+then the guess will be put in an array like this ['a', 'p', 'p', 'l', 'e'];
+
+if one of the inputs are empty there will be a message displayed and they have to try again
+
+Then we loop through each letter of the guess
+if the letter we are looping through is at the same index of the random generated word, the input border will get greenballs
+else if the letter is included in the word, but not on the same index the input border will get orange
+else nothing will happen and the border will stay gray
+
+if player guesses the correct word
+message will get displayed that user guessed the right word
+losestreak will get reset, and correctGuesses will get upped
+function for drawing a ball will be used (logic will be shown later)
+if user still hasnt met the requirements to win / lose a new word will get created
+
+// function for checking if player wins //
+if player green balls === 3 (win)
+if player red balls === 3 (lose)
+if player correct guesses === 10 (win)
+if player lose streak === 3 (loses)
+if player has bingo line (wins)
+
+// function for drawing balls //
+array with green, red and even number ball
+if the first drawn ball is red no second ball will be drawn
+
+// function for bingo card //
+first code to set up random numbered bingo card
+if drawn ball === number bingo card background will get green
+if bingocard has (horizontal / vertical / diagonal) line the user wins

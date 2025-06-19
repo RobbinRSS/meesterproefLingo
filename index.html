@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Lingo</h1>
+    <div id="active-team-display"></div>
+    <main id="blocks">
+      <!-- NOTE this is how it looks inside the html -->
+      <!-- <div id="row">
+        <input class="letter" />
+        <input class="letter" />
+        <input class="letter" />
+        <input class="letter" />
+      </div> -->
+    </main>
+    <div id="draw-ball-info"></div>
+    <section id="buttons">
+      <button id="start-btn">start</button>
+      <button id="check-btn">Check</button>
+    </section>
+    <h1 id="message"></h1>
+    <div id="teams-info">
+      <div id="team1-info">
+        <h3>Bingo kaart team 1</h3>
+        <p id="greenballs-team1">green balls: 0</p>
+        <p id="redballs-team1">red balls: 0</p>
+        <table
+          id="bingo-card-team1"
+          border="1"
+          cellspacing="0"
+          cellpadding="10"
+        ></table>
+      </div>
+      <div id="team2-info">
+        <h3>Bingo kaart team 2</h3>
+        <p id="greenballs-team2">green balls: 0</p>
+        <p id="redballs-team2">red balls: 0</p>
+        <table
+          id="bingo-card-team2"
+          border="1"
+          cellspacing="0"
+          cellpadding="10"
+        ></table>
+      </div>
+    </div>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

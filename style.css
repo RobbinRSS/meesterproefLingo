@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.letter {
+  border: 2px solid black;
+  margin: 2px;
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  text-align: center;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+#start-btn,
+#check-btn {
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+#start-btn {
+  background-color: rgb(5, 186, 5);
+}
+
+#check-btn {
+  background-color: rgb(66, 154, 209);
+}
+
+#teams-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+#team1-info,
+#team2-info {
+  flex: 1;
+  max-width: 400px;
+  text-align: center;
+}
+
+#draw-ball-info {
+  position: fixed;
+  right: 5%;
+  top: 15%;
+  width: 200px;
+  height: 300px;
+  overflow-y: scroll;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+}

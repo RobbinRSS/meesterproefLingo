@@ -1,7 +1,12 @@
 import { words } from "./words.js";
 import { setupBingoCard, markBingoNumber, hasBingoLine } from "./bingocard.js";
 import { createRows } from "./setupLingoBord.js";
-import { displayBalls, drawBalls, handleDraw } from "./ballFunctions.js";
+import {
+  displayBalls,
+  drawBalls,
+  handleDraw,
+  resetBalls,
+} from "./ballFunctions.js";
 import {
   gameState,
   displayCurrentTeam,
@@ -29,6 +34,8 @@ startBtn.addEventListener("click", function () {
 
   gameState.teams.team1.teamName = prompt("Naam voor team 1");
   gameState.teams.team2.teamName = prompt("Naam voor team 2");
+
+  resetBalls();
 
   gameState.currentTeam = "team1";
   document.getElementById("draw-ball-info").innerHTML = "";

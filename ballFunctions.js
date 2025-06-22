@@ -19,10 +19,7 @@ export function displayBalls() {
   });
 }
 
-export function drawBalls() {
-  const team = gameState.currentTeam;
-
-  // Ballen per team definiëren
+export function resetBalls() {
   const commonBalls = ["green", "green", "green", "red", "red", "red"];
   const evenBalls = [
     2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32,
@@ -31,23 +28,38 @@ export function drawBalls() {
     1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35,
   ];
 
-  const teamBalls =
-    team === "team1"
-      ? [...commonBalls, ...evenBalls]
-      : [...commonBalls, ...oddBalls];
+  gameState.balls.team1 = [...commonBalls, ...evenBalls];
+  gameState.balls.team2 = [...commonBalls, ...oddBalls];
+}
 
-  const firstDraw = teamBalls[Math.floor(Math.random() * teamBalls.length)];
+export function drawBalls() {
+  const team = gameState.currentTeam;
+  const teamBalls = gameState.balls[team];
+
+  if (teamBalls.length === 0) {
+    displayMessage("Er zijn geen ballen meer over voor dit team.", "red", 3000);
+    return;
+  }
+
+  const firstIndex = Math.floor(Math.random() * teamBalls.length);
+  const firstDraw = teamBalls.splice(firstIndex, 1)[0]; // verwijder de eerste bal
+
   handleDraw(firstDraw);
   console.log(firstDraw);
 
   if (firstDraw !== "red") {
-    const secondDraw = teamBalls[Math.floor(Math.random() * teamBalls.length)];
-    handleDraw(secondDraw);
-    console.log(secondDraw);
-    drawballInfo(team, firstDraw, secondDraw);
+    if (teamBalls.length > 0) {
+      const secondIndex = Math.floor(Math.random() * teamBalls.length);
+      const secondDraw = teamBalls.splice(secondIndex, 1)[0]; // verwijder tweede bal
+      handleDraw(secondDraw);
+      console.log(secondDraw);
+      drawballInfo(team, firstDraw, secondDraw);
+    } else {
+      drawballInfo(team, firstDraw); // tweede bal niet meer beschikbaar
+    }
+  } else {
+    drawballInfo(team, firstDraw);
   }
-
-  if (firstDraw === "red") drawballInfo(team, firstDraw);
 
   displayBalls();
 

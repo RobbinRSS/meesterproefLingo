@@ -18,6 +18,10 @@ export const gameState = {
       currentRowIndex: 0,
     },
   },
+  balls: {
+    team1: [],
+    team2: [],
+  },
 };
 
 export function switchTeam() {

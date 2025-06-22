@@ -1,0 +1,30 @@
+BUGS pagina,
+
+als iemand een account aanmaakt en daarna een playlist wilt aanmaken, dan werkt het niet. X
+
+als iemand een playlist maakt, moet eerst de pagina moeten herladen voordat het zichtbaar word. X
+
+Alle info van gebruikers worden zichtbaar in network X
+
+geen dubbele songs voor ingelogde gebruiker
+
+Overzicht voor songs X
+
+Als een gebruiker in de link de playlist id aanpast, dan kan hij naar een andere playlist, dat niet van hem is als het niet zijn playlist id is X
+
+
+TODO:
+
+Inlog in session bewaren (alleen nog voor Sign up te doen) X
+
+Kijken of ik check-session in AuthContext kan zetten X
+
+Log uit voor gebruiker X
+
+Custom alerts / input(voor als iemand een playlist maak) X
+
+
+// probleem nu
+moet de get naar user weghalen, X
+moet uit de signUp en SignIn de waardes terughalen X
+moet userIngo van AuthContext niet daar bewaren, maar in de sessionstorage X

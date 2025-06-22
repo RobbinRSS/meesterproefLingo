@@ -168,13 +168,13 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="oClGTv9jNvnOxV3lfpxi-19" value="Bal word uit de poel gehaald" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="oClGTv9jNvnOxV3lfpxi-19" value="Bal word uit de poel gehaald" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
           <mxGeometry x="180" y="860" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="oClGTv9jNvnOxV3lfpxi-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="oClGTv9jNvnOxV3lfpxi-21" target="oClGTv9jNvnOxV3lfpxi-23">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="oClGTv9jNvnOxV3lfpxi-21" value="Bal word uit de poel gehaald" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="oClGTv9jNvnOxV3lfpxi-21" value="Bal word uit de poel gehaald" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
           <mxGeometry x="350" y="1020" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="oClGTv9jNvnOxV3lfpxi-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="oClGTv9jNvnOxV3lfpxi-23" target="uWzpOT1AdCiu_1bDRIk7-16">
@@ -196,11 +196,11 @@
         <mxCell id="oClGTv9jNvnOxV3lfpxi-23" value="10 woorden correct gegokt" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
           <mxGeometry x="374" y="1089" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="oClGTv9jNvnOxV3lfpxi-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="oClGTv9jNvnOxV3lfpxi-24" target="oClGTv9jNvnOxV3lfpxi-25">
+        <mxCell id="oClGTv9jNvnOxV3lfpxi-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="oClGTv9jNvnOxV3lfpxi-24" target="oClGTv9jNvnOxV3lfpxi-45">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="oClGTv9jNvnOxV3lfpxi-32" value="Nee" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="oClGTv9jNvnOxV3lfpxi-29">
-          <mxGeometry x="-0.2667" relative="1" as="geometry">
+        <mxCell id="oClGTv9jNvnOxV3lfpxi-49" value="Nee" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="oClGTv9jNvnOxV3lfpxi-46">
+          <mxGeometry x="0.28" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
@@ -210,7 +210,7 @@
         <mxCell id="oClGTv9jNvnOxV3lfpxi-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="oClGTv9jNvnOxV3lfpxi-25" target="oClGTv9jNvnOxV3lfpxi-5">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="160" y="1460" />
+              <mxPoint x="160" y="1590" />
               <mxPoint x="160" y="405" />
             </Array>
           </mxGeometry>
@@ -221,7 +221,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="oClGTv9jNvnOxV3lfpxi-25" value="3 rode ballen?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="374" y="1420" width="80" height="80" as="geometry" />
+          <mxGeometry x="374" y="1550" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="oClGTv9jNvnOxV3lfpxi-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.008;entryY=0.883;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="oClGTv9jNvnOxV3lfpxi-24" target="uWzpOT1AdCiu_1bDRIk7-23">
           <mxGeometry relative="1" as="geometry" />
@@ -238,6 +238,25 @@
           <mxGeometry x="-0.1314" y="3" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="oClGTv9jNvnOxV3lfpxi-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="oClGTv9jNvnOxV3lfpxi-45" target="oClGTv9jNvnOxV3lfpxi-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oClGTv9jNvnOxV3lfpxi-48" value="Nee" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="oClGTv9jNvnOxV3lfpxi-47">
+          <mxGeometry x="-0.12" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oClGTv9jNvnOxV3lfpxi-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="oClGTv9jNvnOxV3lfpxi-45" target="uWzpOT1AdCiu_1bDRIk7-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oClGTv9jNvnOxV3lfpxi-51" value="Ja" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="oClGTv9jNvnOxV3lfpxi-50">
+          <mxGeometry x="-0.3861" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oClGTv9jNvnOxV3lfpxi-45" value="Bingo lijn?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="374" y="1420" width="80" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

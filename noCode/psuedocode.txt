@@ -1,48 +1,130 @@
-// make the required variables //
-greenballs, redballs, currentrow, loseStreak, correctGuesses, start and check button, array of words
+1. Initialisatie
+Definieer de benodigde variabelen:
 
-// if player clicks on start button //
-everything will get a reset, variables / words / lingoboard / scores / bingocard
+greenBalls, redBalls
 
-// function for generating a new Word //
-if player guesses correct word 
-using a random function a random word will get picked from words array
+currentRow, loseStreak, correctGuesses
 
-// function for checking if word is correct (also the biggest function) //
-every row will get selected
-if the amount of guesses are more then the amount of rows a message will be displayed that the user has no more guesses and loseStreak will get higher
-However if the player still hasnt lost, the function for creating a new word will be used
+words[] (lijst met woorden)
 
-Now the logic for if the letter is in the word / right place in the word
-first we need to get the active row
-then we will get all the inputs from the active row
-then the guess will be put in an array like this ['a', 'p', 'p', 'l', 'e'];
+bingoCard (bingo raster)
 
-if one of the inputs are empty there will be a message displayed and they have to try again
+drawnBalls[] (getrokken ballen)
 
-Then we loop through each letter of the guess
-if the letter we are looping through is at the same index of the random generated word, the input border will get greenballs
-else if the letter is included in the word, but not on the same index the input border will get orange
-else nothing will happen and the border will stay gray
+Koppel de knoppen:
 
-if player guesses the correct word
-message will get displayed that user guessed the right word
-losestreak will get reset, and correctGuesses will get upped
-function for drawing a ball will be used (logic will be shown later)
-if user still hasnt met the requirements to win / lose a new word will get created
+Startknop
 
-// function for checking if player wins //
-if player green balls === 3 (win)
-if player red balls === 3 (lose)
-if player correct guesses === 10 (win)
-if player lose streak === 3 (loses)
-if player has bingo line (wins)
+Check-knop
 
-// function for drawing balls //
-array with green, red and even number ball
-if the first drawn ball is red no second ball will be drawn
+2. Wanneer speler op 'Start' klikt
+Reset alle variabelen (scores, streaks, rijen, woorden, ballen, etc.)
 
-// function for bingo card //
-first code to set up random numbered bingo card
-if drawn ball === number bingo card background will get green
-if bingocard has (horizontal / vertical / diagonal) line the user wins
+Reset de UI:
+
+Woordinvoer
+
+Lingobord
+
+Bingo-kaart
+
+Berichten
+
+Genereer een nieuw woord
+
+Genereer een nieuwe bingo-kaart
+
+3. Speler doet een gok → Check-knop wordt gebruikt
+3.1 Controleer aantal pogingen
+Als aantal pogingen groter is dan het maximum aantal rijen:
+
+Toon bericht: "Geen pogingen meer"
+
+Verhoog loseStreak met 1
+
+Check of speler verliest (zie win/lose-logica)
+
+Genereer eventueel nieuw woord als spel doorgaat
+
+3.2 Verwerk invoer
+Haal de actieve rij op
+
+Verzamel alle letterinputs van die rij
+
+Vorm een array: bijv. ['a', 'p', 'p', 'l', 'e']
+
+3.3 Check op lege invoer
+Als er lege invoervelden zijn:
+
+Toon foutmelding: "Vul alle letters in"
+
+Stop hier
+
+3.4 Vergelijk met het juiste woord
+Loop door elke letter in de ingevoerde array:
+
+Als de letter op de juiste positie zit → border wordt groen
+
+Als de letter wel in het woord zit, maar op een verkeerde plek → border wordt oranje
+
+Als de letter niet in het woord zit → border blijft grijs
+
+3.5 Controleer of woord correct is
+Als alle letters correct zijn (juiste woord geraden):
+
+Toon bericht: "Goed geraden!"
+
+Verhoog correctGuesses met 1
+
+Reset loseStreak
+
+Roep de functie aan voor het trekken van een bal
+
+Check of speler gewonnen/verloren is
+
+Zo niet, genereer nieuw woord
+
+4. Ballentrekfunctie (na juist geraden woord)
+Trek een willekeurige bal uit: ['green', 'red', 'even']
+
+Voeg deze toe aan drawnBalls
+
+Als eerste bal rood is → trek geen tweede
+
+Als niet rood:
+
+Trek eventueel tweede bal
+
+Update aantal greenBalls en redBalls
+
+Kleur eventueel nummers op bingo-kaart groen als ze overeenkomen met de bal
+
+5. Bingo-kaart logica
+5.1 Setup bij start
+Maak een 5x5 bingo-kaart met willekeurige unieke nummers
+
+Toon deze in het raster
+
+5.2 Bij elke bal
+Als het nummer op de bal op de kaart staat:
+
+Kleur dat vakje groen
+
+Controleer na elke beurt op bingo:
+
+Horizontale, verticale of diagonale lijn
+
+Als bingo → speler wint
+
+6. Winnen of verliezen
+6.1 Speler wint als:
+greenBalls == 3
+
+of correctGuesses == 10
+
+of bingo (volledige lijn op kaart)
+
+6.2 Speler verliest als:
+redBalls == 3
+
+of loseStreak == 3

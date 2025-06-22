@@ -1,5 +1,6 @@
 const bingoCardTeam1Element = document.getElementById("bingo-card-team1");
 const bingoCardTeam2Element = document.getElementById("bingo-card-team2");
+import { gameState } from "./globalVariables.js";
 
 const evenNumbers = [
   2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32,
@@ -12,6 +13,11 @@ let bingoCardTeam2 = [];
 export function setupBingoCard() {
   bingoCardTeam1 = shuffleAndSlice(evenNumbers);
   bingoCardTeam2 = shuffleAndSlice(oddNumbers);
+
+  document.getElementById("bingo-team1").textContent =
+    gameState.teams.team1.teamName;
+  document.getElementById("bingo-team2").textContent =
+    gameState.teams.team2.teamName;
 
   renderCard(bingoCardTeam1, bingoCardTeam1Element, "team1");
   renderCard(bingoCardTeam2, bingoCardTeam2Element, "team2");

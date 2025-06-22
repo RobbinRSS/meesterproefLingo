@@ -27,6 +27,9 @@ startBtn.addEventListener("click", function () {
     gameState.teams[`team${i}`].correctGuesses = 0;
   }
 
+  gameState.teams.team1.teamName = prompt("Naam voor team 1");
+  gameState.teams.team2.teamName = prompt("Naam voor team 2");
+
   gameState.currentTeam = "team1";
   document.getElementById("draw-ball-info").innerHTML = "";
 

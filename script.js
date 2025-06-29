@@ -69,11 +69,10 @@ function checkLetters() {
   const team = gameState.currentTeam;
   const rows = document.querySelectorAll(".row");
 
-  // als speler het woord niet raad
   if (currentRowIndex >= rows.length) {
     gameState.teams[team].losestreak++;
     displayMessage(
-      `Geen pogingen meer, het woords was ${randomWord}`,
+      `Geen pogingen meer, het woord was ${randomWord}`,
       "red",
       5000
     );
@@ -83,35 +82,57 @@ function checkLetters() {
       newWord();
     }
     return;
-  } // geen rijen meer
+  }
 
   const row = rows[currentRowIndex];
   const inputs = row.querySelectorAll("input");
   const guess = Array.from(inputs).map((input) => input.value.toLowerCase());
-  //   console.log(guess);
 
-  // als een van de inputs leeg is
   if (guess.some((letter) => letter === "")) {
     displayMessage("Vul alle letters in.", "red", 3000);
     return;
   }
 
-  // om de kleur van border aan te passen gebaseerd op of de letter in het woord zit of ook op de juiste plek
-  guess.forEach((letter, index) => {
-    const input = inputs[index];
+  // Stap 1: Maak arrays voor status en lettertelling
+  const result = Array(guess.length).fill("gray");
+  const letterCount = {};
 
-    if (letter === randomWord[index]) {
+  // Tel letters in randomWord
+  for (let i = 0; i < randomWord.length; i++) {
+    const letter = randomWord[i];
+    letterCount[letter] = (letterCount[letter] || 0) + 1;
+  }
+
+  // Stap 2: Eerst correcte letters op de juiste plek markeren (groen)
+  for (let i = 0; i < guess.length; i++) {
+    if (guess[i] === randomWord[i]) {
+      result[i] = "green";
+      letterCount[guess[i]]--; // Verlaag beschikbare telling
+    }
+  }
+
+  // Stap 3: Dan de overige juiste letters op verkeerde plek markeren (oranje)
+  for (let i = 0; i < guess.length; i++) {
+    if (result[i] === "gray" && letterCount[guess[i]] > 0) {
+      result[i] = "orange";
+      letterCount[guess[i]]--;
+    }
+  }
+
+  // Stap 4: Pas de borders aan op basis van resultaat
+  for (let i = 0; i < guess.length; i++) {
+    const input = inputs[i];
+    if (result[i] === "green") {
       input.style.border = "2px solid greenyellow";
-    } else if (randomWord.includes(letter)) {
+    } else if (result[i] === "orange") {
       input.style.border = "2px solid orange";
     } else {
       input.style.border = "2px solid gray";
     }
+    input.disabled = true;
+  }
 
-    input.disabled = true; // disables input na controle
-  });
-
-  // if player guesses correct
+  // Controleer of het woord goed is geraden
   if (guess.join("") === randomWord) {
     displayMessage("🎉 Je hebt het woord geraden!", "green", 5000);
     gameState.teams[team].losestreak = 0;
@@ -121,9 +142,7 @@ function checkLetters() {
       newWord();
     }
   } else {
-    currentRowIndex++; // ga naar volgende rij
-
-    // Zet focus op eerste input van de volgende rij
+    currentRowIndex++;
     const nextRow = rows[currentRowIndex];
     if (nextRow) {
       const firstInput = nextRow.querySelector("input");

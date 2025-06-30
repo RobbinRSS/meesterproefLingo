@@ -76,11 +76,11 @@ function checkLetters() {
       "red",
       5000
     );
-    switchTeam();
-    displayCurrentTeam();
     if (!checkWinOrLose()) {
       newWord();
     }
+    switchTeam();
+    displayCurrentTeam();
     return;
   }
 

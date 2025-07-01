@@ -5,16 +5,16 @@ import { gameState } from "../globalVariables.js";
 import { markBingoNumber } from "../bingocard.js";
 
 // Mock dependencies
-jest.mock("./bingocard.js", () => ({
+jest.mock("../bingocard.js", () => ({
   markBingoNumber: jest.fn(),
 }));
 
-jest.mock("./displayMessage.js", () => ({
+jest.mock("../displayMessage.js", () => ({
   displayMessage: jest.fn(),
   drawballInfo: jest.fn(),
 }));
 
-jest.mock("./globalVariables.js", () => {
+jest.mock("../globalVariables.js", () => {
   const state = {
     teams: {
       team1: { greenballs: 0, redballs: 0, losestreak: 0, correctGuesses: 0 },

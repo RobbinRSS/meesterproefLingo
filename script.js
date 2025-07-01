@@ -14,39 +14,42 @@ import {
 } from "./globalVariables.js";
 import { displayMessage } from "./displayMessage.js";
 
-// basis variabelen //
-const startBtn = document.getElementById("start-btn");
-const checkBtn = document.getElementById("check-btn");
+// Globale variabelen (voor binnen de module)
 let currentRowIndex = 0;
 let randomWord = "";
-//
 
-// start knop //
-startBtn.addEventListener("click", function () {
-  randomWord = words[Math.floor(Math.random() * words.length)].toLowerCase();
-  currentRowIndex = 0;
-  for (let i = 1; i <= 2; i++) {
-    gameState.teams[`team${i}`].greenballs = 0;
-    gameState.teams[`team${i}`].redballs = 0;
-    gameState.teams[`team${i}`].losestreak = 0;
-    gameState.teams[`team${i}`].correctGuesses = 0;
-  }
+function init() {
+  const startBtn = document.getElementById("start-btn");
+  const checkBtn = document.getElementById("check-btn");
 
-  gameState.teams.team1.teamName = prompt("Naam voor team 1");
-  gameState.teams.team2.teamName = prompt("Naam voor team 2");
+  startBtn.addEventListener("click", () => {
+    randomWord = words[Math.floor(Math.random() * words.length)].toLowerCase();
+    currentRowIndex = 0;
 
-  resetBalls();
+    for (let i = 1; i <= 2; i++) {
+      gameState.teams[`team${i}`].greenballs = 0;
+      gameState.teams[`team${i}`].redballs = 0;
+      gameState.teams[`team${i}`].losestreak = 0;
+      gameState.teams[`team${i}`].correctGuesses = 0;
+    }
 
-  gameState.currentTeam = "team1";
-  document.getElementById("draw-ball-info").innerHTML = "";
+    gameState.teams.team1.teamName = prompt("Naam voor team 1");
+    gameState.teams.team2.teamName = prompt("Naam voor team 2");
 
-  displayCurrentTeam();
-  displayBalls();
-  createRows(randomWord);
-  console.log(randomWord);
-  setupBingoCard();
-});
-//
+    resetBalls();
+
+    gameState.currentTeam = "team1";
+    document.getElementById("draw-ball-info").innerHTML = "";
+
+    displayCurrentTeam();
+    displayBalls();
+    createRows(randomWord);
+    console.log(randomWord);
+    setupBingoCard();
+  });
+
+  checkBtn.addEventListener("click", checkLetters);
+}
 
 // maakt een nieuw woord aan als het potje nog niet voorbij is //
 function newWord() {
@@ -60,11 +63,8 @@ function newWord() {
   const firstInput = document.querySelector(".row input");
   if (firstInput) firstInput.focus();
 }
-//
 
 // check als word is correct //
-checkBtn.addEventListener("click", checkLetters);
-
 function checkLetters() {
   const team = gameState.currentTeam;
   const rows = document.querySelectorAll(".row");
@@ -150,16 +150,13 @@ function checkLetters() {
     }
   }
 }
-//
 
 // kijkt of de gebruiker heeft gewonnen of verloren //
 function checkWinOrLose() {
-  // krijg de team naam
   const team = gameState.currentTeam;
   const teamName = team === "team1" ? "Team 1" : "Team 2";
   const balls = gameState.teams[team];
 
-  // win condities
   if (balls.greenballs >= 3) {
     displayMessage(`🎉 ${teamName} wint met 3 groene ballen!`, "green", 5000);
     return true;
@@ -184,5 +181,4 @@ function checkWinOrLose() {
   return false;
 }
 
-export { checkWinOrLose };
-//
+export { checkWinOrLose, init };

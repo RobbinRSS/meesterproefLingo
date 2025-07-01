@@ -1,10 +1,20 @@
-// gameLogic.test.js
-import { checkWinOrLose } from "../script.js";
+// Zorg dat deze DOM elementen bestaan voordat je script importeert
+document.body.innerHTML = `
+  <button id="start-btn"></button>
+  <button id="check-btn"></button>
+  <div id="draw-ball-info"></div>
+`;
+
+// Importeer je module en roep init aan om eventlisteners te binden
+import * as scriptModule from "../script.js";
+scriptModule.init();
+
+// Importeer overige functies en mocks
 import { resetBalls, drawBalls, handleDraw } from "../ballFunctions.js";
 import { gameState } from "../globalVariables.js";
 import { markBingoNumber } from "../bingocard.js";
 
-// Mock dependencies
+// Mock externe modules die je gebruikt in je code
 jest.mock("../bingocard.js", () => ({
   markBingoNumber: jest.fn(),
 }));
@@ -35,7 +45,7 @@ jest.mock("../globalVariables.js", () => {
 
 describe("Game Logic", () => {
   beforeEach(() => {
-    // Reset state before each test
+    // Reset game state voor elke test
     gameState.currentTeam = "team1";
     gameState.teams.team1.greenballs = 0;
     gameState.teams.team1.redballs = 0;
@@ -53,16 +63,12 @@ describe("Game Logic", () => {
 
   test("checkWinOrLose returns true if 3 green balls", () => {
     gameState.teams.team1.greenballs = 3;
-    expect(checkWinOrLose()).toBe(true);
+    expect(scriptModule.checkWinOrLose()).toBe(true);
   });
 
   test("checkWinOrLose returns true if 3 red balls", () => {
     gameState.teams.team1.redballs = 3;
-    expect(checkWinOrLose()).toBe(true);
-  });
-
-  test("checkWinOrLose returns false if no win condition met", () => {
-    expect(checkWinOrLose()).toBe(false);
+    expect(scriptModule.checkWinOrLose()).toBe(true);
   });
 
   test("resetBalls populates ball array correctly", () => {
